@@ -2,9 +2,9 @@ import React from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import { BasicData } from '../BasicData'
 
-export function SelectorGroupRr({ onChangeStatus }) {
+
+export function SelectorGroupRr({ onChangeStatus, data }) {
 
     const [state, setState] = React.useState({
         country: false,
@@ -16,41 +16,24 @@ export function SelectorGroupRr({ onChangeStatus }) {
         onChangeStatus(event)
     };
 
+    // console.log(Object.keys(data))
     return (
-        <FormGroup>
-            <FormControlLabel
-                control={
-                    <Checkbox
-                        checked={state.checkedA}
-                        onChange={handleChange}
-                        name="country"
-                        color="primary"
-                    />
-                }
-                label={BasicData.country}
-            />
-            <FormControlLabel
-                control={
-                    <Checkbox
-                        checked={state.checkedA}
-                        onChange={handleChange}
-                        name="ministry"
-                        color="primary"
-                    />
-                }
-                label={BasicData.ministry}
-            />
-            <FormControlLabel
-                control={
-                    <Checkbox
-                        checked={state.checkedA}
-                        onChange={handleChange}
-                        name="utils"
-                        color="primary"
-                    />
-                }
-                label="Lista de Utiles Escolares"
-            />
+        <FormGroup row>
+            {Object.keys(data).map((item) => {
+                return (
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={state.checkedA}
+                                onChange={handleChange}
+                                name={item}
+                                color="primary"
+                            />
+                        }
+                        label={item}
+                        key={item}
+                    />);
+            })}
         </FormGroup>
     );
 }

@@ -10,22 +10,41 @@ const styles = StyleSheet.create({
     },
     section: {
         textAlign: 'center',
+
+    },
+    footer: {
+        alignSelf: 'center',
+        marginBottom: '20px'
+    },
+    books: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexGrow: 1
     }
+
 });
 
 // Create Document Component
-const MyDocument = ({ info }) => {
-    console.log("Info:", info);
+const MyDocument = ({ BasicInfo }) => {
+    console.log("Info:", BasicInfo);
     return < Document >
         <Page size="LETTER" style={styles.page}>
-            {info.map((item) => {
-                return (<View style={styles.section} key={item}>
+            <View style={styles.section} key="Repubic">
+                <Text>Republica Bolivariana de Venezuela</Text>
+            </View>
+            <View style={styles.section} key="Ministry">
+                <Text>Ministerio de Educacion Cultura y Deporte</Text>
+            </View>
+            {BasicInfo.map((item) => {
+                return (<View style={styles.books} key={item}>
                     <Text>{item}</Text>
                 </View>)
             })}
-            {/* <View style={styles.section}>
-                <Text>Section #2</Text>
-            </View> */}
+            <View style={styles.footer} key="footer">
+                <Text>Nota: Todos los Utiles deben estar debidamente <br />
+                     identificados</Text>
+            </View>
+
         </Page>
     </Document >
 };
