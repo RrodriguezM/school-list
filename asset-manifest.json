@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/school-list/static/css/main.eac06d95.chunk.css",
-    "main.js": "/school-list/static/js/main.720f8dc5.chunk.js",
-    "main.js.map": "/school-list/static/js/main.720f8dc5.chunk.js.map",
-    "runtime-main.js": "/school-list/static/js/runtime-main.81c7a906.js",
-    "runtime-main.js.map": "/school-list/static/js/runtime-main.81c7a906.js.map",
+    "main.css": "/school-list/static/css/main.661bfa4b.chunk.css",
+    "main.js": "/school-list/static/js/main.5dedbb83.chunk.js",
+    "main.js.map": "/school-list/static/js/main.5dedbb83.chunk.js.map",
+    "runtime-main.js": "/school-list/static/js/runtime-main.4597ccec.js",
+    "runtime-main.js.map": "/school-list/static/js/runtime-main.4597ccec.js.map",
     "static/css/2.535cac22.chunk.css": "/school-list/static/css/2.535cac22.chunk.css",
-    "static/js/2.11d08b41.chunk.js": "/school-list/static/js/2.11d08b41.chunk.js",
-    "static/js/2.11d08b41.chunk.js.map": "/school-list/static/js/2.11d08b41.chunk.js.map",
-    "static/js/3.529ea9e9.chunk.js": "/school-list/static/js/3.529ea9e9.chunk.js",
-    "static/js/3.529ea9e9.chunk.js.map": "/school-list/static/js/3.529ea9e9.chunk.js.map",
+    "static/js/2.1d19d25e.chunk.js": "/school-list/static/js/2.1d19d25e.chunk.js",
+    "static/js/2.1d19d25e.chunk.js.map": "/school-list/static/js/2.1d19d25e.chunk.js.map",
+    "static/js/3.8f80b992.chunk.js": "/school-list/static/js/3.8f80b992.chunk.js",
+    "static/js/3.8f80b992.chunk.js.map": "/school-list/static/js/3.8f80b992.chunk.js.map",
     "index.html": "/school-list/index.html",
     "static/css/2.535cac22.chunk.css.map": "/school-list/static/css/2.535cac22.chunk.css.map",
-    "static/css/main.eac06d95.chunk.css.map": "/school-list/static/css/main.eac06d95.chunk.css.map",
-    "static/js/2.11d08b41.chunk.js.LICENSE.txt": "/school-list/static/js/2.11d08b41.chunk.js.LICENSE.txt"
+    "static/css/main.661bfa4b.chunk.css.map": "/school-list/static/css/main.661bfa4b.chunk.css.map",
+    "static/js/2.1d19d25e.chunk.js.LICENSE.txt": "/school-list/static/js/2.1d19d25e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.81c7a906.js",
+    "static/js/runtime-main.4597ccec.js",
     "static/css/2.535cac22.chunk.css",
-    "static/js/2.11d08b41.chunk.js",
-    "static/css/main.eac06d95.chunk.css",
-    "static/js/main.720f8dc5.chunk.js"
+    "static/js/2.1d19d25e.chunk.js",
+    "static/css/main.661bfa4b.chunk.css",
+    "static/js/main.5dedbb83.chunk.js"
   ]
 }
