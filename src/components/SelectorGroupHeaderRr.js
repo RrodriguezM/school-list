@@ -1,37 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 
 export function SelectorGroupRr({ onChangeStatus, data }) {
+    const [items, setItems] = useState(data)
 
-    const [state, setState] = React.useState({
-        country: false,
-        ministry: false,
-        utils: false,
-    });
     const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
+        setItems({ ...items, [event.target.name]: event.target.checked });
         onChangeStatus(event)
     };
-
-    // console.log(Object.keys(data))
     return (
         <FormGroup row>
-            {Object.keys(data).map((item) => {
+            {Object.entries(items).map(([key, value]) => {
+                // console.log(key, value)
                 return (
                     <FormControlLabel
                         control={
                             <Checkbox
-                                checked={state.checkedA}
+                                checked={value}
                                 onChange={handleChange}
-                                name={item}
+                                name={key}
                                 color="primary"
                             />
                         }
-                        label={item}
-                        key={item}
+                        label={key}
+                        key={key}
                     />);
             })}
         </FormGroup>

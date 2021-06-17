@@ -1,5 +1,6 @@
 export const BasicData = {
-    "Republica Bolivariana de Venezuela": true,
-    "Ministerio de Educacion": false
+    "Nombre del Colegio": "",
+    "Seccion": "Seccion ",
+    "Municipio-Estado": "Maracaibo-Edo Zulia"
 }
 

@@ -1,53 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { NavbarRr } from "../components/NavbarRr"
 import { SelectorGroupRr } from "../components/SelectorGroupHeaderRr"
+import { InputRr } from "../components/InputRr"
+import { InputTextRr } from "../components/InputTextRr"
 import 'tachyons'
 import { PDFViewer } from '@react-pdf/renderer';
 import MyDocument from "../components/PDFGeneratorRr"
 import { BasicData } from '../BasicData'
 import { BooksData } from '../BooksData'
 import { UtilsData } from '../UtilsData'
+import { NotesData } from '../NotesData'
+
+import 'tachyons'
 
 
 function App() {
-  const [state, setState] = React.useState({
-    information: [],
-    books: [],
-    utils: []
-  });
+  const [books, setBooks] = useState(BooksData)
+  const [basics, setBasics] = useState(BasicData)
+  const [utils, setUtils] = useState(UtilsData)
+  const [notes, setNotes] = useState(NotesData)
 
-  const onChangeValueBasic = (event) => {
-    // Validate if existe si existe se borra si no se agrega
-    setState({
-      information: state.information.concat(event.target.labels[0].innerText)
-    });
-    // setState({ 'basic': state.information.concat({[event.target.name]: event.target.checked }) });
-    // console.log(state)
+  const onChangeBasics = (event) => {
+    setBasics({ ...basics, [event.target.id]: event.target.value });
   }
 
-  // const onChangeValueBooks = (event) => {
-  //   // Validate if existe si existe se borra si no se agrega
-  //   setState({
-  //     books: state.books.concat(event.target.labels[0].innerText)
-  //   });
-  // }
+  const onChangeBooks = (event) => {
+    setBooks({ ...books, [event.target.id]: event.target.value });
+  }
+
+  const onChangeUtils = (event) => {
+    setUtils({ ...utils, [event.target.id]: event.target.value });
+  }
+
+  const onChangeNotes = (event) => {
+    setNotes({ ...notes, [event.target.id]: event.target.value });
+  }
+
+  useEffect(() => { setBooks(BooksData) }, [])
 
   return (
     <div className="ma3">
-      <NavbarRr />
       <h3>Informacion Basica</h3>
-      <SelectorGroupRr onChangeStatus={onChangeValueBasic} data={BasicData} />
+      <InputTextRr onChangeStatus={onChangeBasics} data={basics} />
       <h3>Libros</h3>
-      <SelectorGroupRr onChangeStatus={onChangeValueBasic} data={BooksData} />
+      <InputRr onChangeStatus={onChangeBooks} data={books} />
       <h3>Utiles</h3>
-      <SelectorGroupRr onChangeStatus={onChangeValueBasic} data={UtilsData} />
+      <InputRr onChangeStatus={onChangeUtils} data={utils} />
+      <h3>Notas y Observaciones</h3>
+      <InputTextRr onChangeStatus={onChangeNotes} data={notes} />
       <div className="tc mt4">
-        <PDFViewer width={"100%"} height={600}>
-          <MyDocument BasicInfo={state.information} BooksInfo={state.books} />
+        <PDFViewer width={"80%"} height={600}>
+          <MyDocument BasicInfo={basics} BooksInfo={books} UtilsInfo={utils} NotesInfo={notes} />
         </PDFViewer>
       </div>
-      <p>Foot Notes</p>
+      <p>Developed by <strong><i>Rafael Rodriguez</i></strong></p>
     </div>
   );
 }
