@@ -28,10 +28,10 @@ CURRENT_VERSION="$MAJOR_VERSION.$MINOR_VERSION"
 
 if [ "$IS_BUILDING_FULL" = true ]; then
   NEXT_MINOR_VERSION=$((MINOR_VERSION+1))
-  # aws ssm put-parameter \
-  #     --name "$PARAMETER_SCOPE/version/minor" \
-  #     --value $NEXT_MINOR_VERSION \
-  #     --overwrite
+  aws ssm put-parameter \
+      --name "$PARAMETER_SCOPE/version/minor" \
+      --value $NEXT_MINOR_VERSION \
+      --overwrite
 
   export PREVIOUS_VERSION=$CURRENT_VERSION
   export NEXT_VERSION="$MAJOR_VERSION.$NEXT_MINOR_VERSION"
