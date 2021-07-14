@@ -36,8 +36,8 @@ if [ "$IS_BUILDING_FULL" = true ]; then
   export PREVIOUS_VERSION=$CURRENT_VERSION
   export NEXT_VERSION="$MAJOR_VERSION.$NEXT_MINOR_VERSION"
   echo  $NEXT_VERSION
-  # tag=$(git tag --points-at HEAD)
-  # git push origin "$tag"
+  git tag $NEXT_VERSION
+  git push origin $NEXT_VERSION
 
 else
   export PREVIOUS_VERSION=""
