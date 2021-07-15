@@ -35,10 +35,11 @@ if [ "$IS_BUILDING_FULL" = true ]; then
 
   export PREVIOUS_VERSION=$CURRENT_VERSION
   export NEXT_VERSION="$MAJOR_VERSION.$NEXT_MINOR_VERSION"
-
-  git tag -a -m $NEXT_VERSION $NEXT_VERSION
-  git push origin $NEXT_VERSION
-
+  if [ "$CODEBUILD_ACCOUNT_ID" != 206013971730 ]; then
+    echo RAN
+    git tag -a -m $NEXT_VERSION $NEXT_VERSION
+    git push origin $NEXT_VERSION
+  fi
 else
   export PREVIOUS_VERSION=""
   export NEXT_VERSION=$CURRENT_VERSION
