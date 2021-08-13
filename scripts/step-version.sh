@@ -15,6 +15,7 @@ set -e
 ##   This script is run on all build phases, only increment your version if
 ##   [ "$IS_BUILDING_FULL" = true ] or you will end up incrementing versions
 ##   on feature branches, etc...
+# add a comment
 
 MAJOR_VERSION=\
 $(aws ssm get-parameter \
